@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Alunos • Ensino Técnico em Informática</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topo">
+    <h1>Cadastro de Alunos</h1>
+    <p>Preencha seus dados ao lado. Tudo é tratado aqui mesmo, no seu navegador.</p>
+  </header>
+
+  <main class="layout">
+
+    <section class="coluna" aria-labelledby="titulo-form">
+      <h2 id="titulo-form">Formulário de cadastro</h2>
+
+      <form id="cadastroForm" novalidate>
+
+        <div class="campo">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Ex.: Maria da Silva" required>
+          <small class="erro" id="erroNome" role="alert"></small>
+        </div>
+
+        <div class="campo">
+          <label for="email">E-mail institucional</label>
+          <input type="email" id="email" name="email" placeholder="nome@escola.edu.br" required>
+          <small class="erro" id="erroEmail" role="alert"></small>
+        </div>
+
+        <div class="campo">
+          <label for="senha">Senha de acesso</label>
+          <input type="password" id="senha" name="senha" placeholder="Mínimo de 6 caracteres" minlength="6" required>
+          <small class="erro" id="erroSenha" role="alert"></small>
+        </div>
+
+        <div class="campo">
+          <label for="confirmaSenha">Confirmação de senha</label>
+          <input type="password" id="confirmaSenha" name="confirmaSenha" placeholder="Digite a senha novamente"
+            required>
+          <small class="erro" id="erroConfirma" role="alert"></small>
+        </div>
+
+        <div class="campo">
+          <label for="perfil">Perfil técnico</label>
+          <select id="perfil" name="perfil" required>
+            <option value="" selected disabled>Selecione uma área…</option>
+            <option value="Redes">Redes</option>
+            <option value="Desenvolvimento">Desenvolvimento</option>
+            <option value="Suporte">Suporte</option>
+          </select>
+          <small class="erro" id="erroPerfil" role="alert"></small>
+        </div>
+
+        <div class="campo campo-check">
+          <label class="check">
+            <input type="checkbox" id="termos" name="termos" required>
+            <span>Li e aceito os termos de uso</span>
+          </label>
+          <small class="erro" id="erroTermos" role="alert"></small>
+        </div>
+
+        <button type="submit">Cadastrar</button>
+      </form>
+    </section>
+
+    <section class="coluna" aria-labelledby="titulo-saida">
+      <h2 id="titulo-saida">Dados cadastrados</h2>
+
+      <p id="mensagemSucesso" class="sucesso" hidden role="status"></p>
+
+      <div class="painel">
+        <p id="painelVazio" class="vazio">Nenhum cadastro por enquanto. Assim que você enviar o formulário, os dados
+          aparecem aqui.</p>
+
+        <dl id="painelDados" hidden>
+          <dt>Nome</dt>
+          <dd id="saidaNome"></dd>
+
+          <dt>E-mail</dt>
+          <dd id="saidaEmail"></dd>
+
+          <dt>Perfil técnico</dt>
+          <dd id="saidaPerfil"></dd>
+
+          <dt>Termos de uso</dt>
+          <dd id="saidaTermos"></dd>
+        </dl>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Atividade prática de Desenvolvimento Web • Manipulação do DOM com JavaScript puro</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
